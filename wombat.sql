@@ -175,19 +175,6 @@ CREATE TABLE IF NOT EXISTS `Modules` (
   PRIMARY KEY  (`serienummer`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `msnauth`
---
-
-DROP TABLE IF EXISTS `msnauth`;
-CREATE TABLE IF NOT EXISTS `msnauth` (
-  `id` int(11) NOT NULL auto_increment,
-  `email` char(40) NOT NULL,
-  `admin` int(11) default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -208,18 +195,6 @@ CREATE TABLE IF NOT EXISTS `NETSET` (
   PRIMARY KEY  (`Macaddress`),
   KEY `niet_in_sccm` (`niet_in_sccm`),
   FULLTEXT KEY `Barcode_idx` (`Barcode`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `omnummering2001`
---
-
-DROP TABLE IF EXISTS `omnummering2001`;
-CREATE TABLE IF NOT EXISTS `omnummering2001` (
-  `oud` varchar(50) default NULL,
-  `nieuw` varchar(50) default NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -371,62 +346,6 @@ CREATE TABLE IF NOT EXISTS `vlans` (
   KEY `vlan_index` (`vlan`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=195 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `wifilog`
---
-
-DROP TABLE IF EXISTS `wifilog`;
-CREATE TABLE IF NOT EXISTS `wifilog` (
-  `ID` int(11) NOT NULL auto_increment,
-  `USERNAME` varchar(50) default NULL,
-  `NASIP` varchar(50) default NULL,
-  `REALM` varchar(50) default NULL,
-  `TIME` varchar(50) default NULL,
-  `CALLINGSTATION` varchar(50) default NULL,
-  `CALLEDSTATION` varchar(50) default NULL,
-  `CLASS` varchar(50) default NULL,
-  `VLAN` varchar(50) default NULL,
-  `fullName` varchar(50) default NULL,
-  `mail` varchar(50) default NULL,
-  `ou` varchar(50) default NULL,
-  `hsbStudentNumber` varchar(50) default NULL,
-  `employeeNumber` varchar(50) default NULL,
-  `AP` varchar(25) default NULL,
-  `IP` varchar(25) default NULL,
-  PRIMARY KEY  (`ID`),
-  KEY `wifilog_username_index` (`USERNAME`),
-  KEY `wifilog_mac_index` (`CALLINGSTATION`),
-  KEY `wifilog_ip_index` (`IP`),
-  FULLTEXT KEY `wifilog_username_text_index` (`USERNAME`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20899216 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `wifilog_2008`
---
-
-DROP TABLE IF EXISTS `wifilog_2008`;
-CREATE TABLE IF NOT EXISTS `wifilog_2008` (
-  `ID` int(11) NOT NULL default '0',
-  `USERNAME` varchar(50) default NULL,
-  `NASIP` varchar(50) default NULL,
-  `REALM` varchar(50) default NULL,
-  `TIME` varchar(50) default NULL,
-  `CALLINGSTATION` varchar(50) default NULL,
-  `CALLEDSTATION` varchar(50) default NULL,
-  `CLASS` varchar(50) default NULL,
-  `VLAN` varchar(50) default NULL,
-  `fullName` varchar(50) default NULL,
-  `mail` varchar(50) default NULL,
-  `ou` varchar(50) default NULL,
-  `hsbStudentNumber` varchar(50) default NULL,
-  `employeeNumber` varchar(50) default NULL,
-  `AP` varchar(25) default NULL,
-  `IP` varchar(25) default NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
