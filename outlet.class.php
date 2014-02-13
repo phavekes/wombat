@@ -75,7 +75,7 @@ class Outlet
 		if ($this->db->num_rows()>1) throw new Exception('Too many results. Only 1 expected');
 	}
 	
-	public function openDb()
+	private function openDb()
 	{
 	    include('./config.php');
 	    $this->db = new database( $dbuser, $dbpass, $dbname, $dbhost );
@@ -100,6 +100,13 @@ class Outlet
 	
 	//schrijf naar de database
 	protected function writeDb() {
+	  $query="UPDATE outlets set 
+	    vlan=".$this->vlan.",
+	    voicevlan=".$this->voicevlan.",
+	    speed=".$this->speed."	    
+	    WHERE id=".$this->id;
+	  $this->db->run_query($query);	  
+	  
 	}
 	
 	
