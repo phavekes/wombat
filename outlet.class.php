@@ -95,7 +95,8 @@ class Outlet
 	
 	//schrijf naar de switch
 	protected function writeSwitch(){
-	
+		$switch=new Switch6500();
+		$switch->writeConfig($this);	
 	}
 	
 	//schrijf naar de database
